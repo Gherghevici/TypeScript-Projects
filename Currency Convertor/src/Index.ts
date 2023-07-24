@@ -1,6 +1,13 @@
 const sumIn = document.getElementById("sumIn") as HTMLInputElement|null;
 const result = document.getElementById("result") as HTMLElement|null;
+const choose = document.getElementById("choose") as HTMLSelectElement;
+const btnDark = document.getElementById("btnDark") as HTMLButtonElement;
+const dark = document.documentElement.classList;
+let chooseValue:number = Number(choose.value); 
 
+const handleDarkMode = ()=>{
+    dark.toggle("dark");
+}
 const handleOutPut=(a:number,b:number):string=>{
     if(Number(a))
         if((a*b)%1===0)
@@ -13,6 +20,8 @@ const handleOutPut=(a:number,b:number):string=>{
     else
         return "0";
 }
+btnDark.addEventListener("click",handleDarkMode);
+choose.addEventListener("change", ()=>chooseValue = Number(choose.value))
 
-sumIn.addEventListener("input", () =>result.innerText= handleOutPut(Number(sumIn.value),4.95))
+sumIn.addEventListener("input", () =>result.innerText= handleOutPut(Number(sumIn.value),chooseValue))
 

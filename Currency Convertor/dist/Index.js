@@ -1,5 +1,12 @@
 const sumIn = document.getElementById("sumIn");
 const result = document.getElementById("result");
+const choose = document.getElementById("choose");
+const btnDark = document.getElementById("btnDark");
+const dark = document.documentElement.classList;
+let chooseValue = Number(choose.value);
+const handleDarkMode = () => {
+    dark.toggle("dark");
+};
 const handleOutPut = (a, b) => {
     if (Number(a))
         if ((a * b) % 1 === 0)
@@ -12,6 +19,8 @@ const handleOutPut = (a, b) => {
     else
         return "0";
 };
-sumIn.addEventListener("input", () => result.innerText = handleOutPut(Number(sumIn.value), 4.95));
+btnDark.addEventListener("click", handleDarkMode);
+choose.addEventListener("change", () => chooseValue = Number(choose.value));
+sumIn.addEventListener("input", () => result.innerText = handleOutPut(Number(sumIn.value), chooseValue));
 export {};
 //# sourceMappingURL=Index.js.map

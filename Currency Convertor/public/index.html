@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ts Tail Wind Project</title>
     <script src="../dist/Index.js" defer type="module"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-stone-300 text-pink-400 font-serif">
-    <div class="flex justify-center my-4">
+<body class=" dark:bg-gray-800  bg-stone-300 text-pink-400 dark:text-teal-400 font-serif">
+    <div class="flex justify-center gap-5 my-4">
         <h1 class="text-3xl font-bold">CURRENCY CONVERTOR</h1>
+        <div class=" flex items-center gap-1">
+            <i class="fa-regular fa-sun fa-lg" style="color: #f59e0b;"></i>
+                <button id="btnDark" class="transition-all duration-500 rounded-2xl w-20 h-7 bg-stone-200 dark:bg-neutral-300 border-solid border-2 border-amber-500 dark:border-sky-400"><span class=" transition-all duration-500 dark:transform dark:translate-x-12 rounded-2xl bg-amber-500 dark:bg-sky-400 w-5 h-5 block mx-1">&nbsp</span></button>
+            <i class="fa-regular fa-moon fa-lg" style="color: #38bdf8;"></i>
+        </div>
     </div>
-    <nav class="bg-stone-200 w-4/5 h-12 mx-auto mt-48 mb-5 rounded-md border-stone-400 border-4">
-        
-    </nav>
+    <div class="mt-48 mb-5 flex flex-col items-center ">
+        <label class="text-lg">Transform RON to...</label>
+    <select id="choose" class="bg-stone-200 dark:bg-stone-300 w-96 h-12  rounded-md border-stone-400 border-4 text-stone-500">
+        <option value="4.92">EUR</option>
+        <option value="4.44">USD</option>
+        <option value="5.69">GBP</option>
+    </select>
+    </div>
+    
     <main class="flex justify-around ">
-        <input id="sumIn" value="0" class="bg-stone-200 w-96 h-96 border-solid border-pink-600 border-4 rounded-lg p-5 text-9xl "></input>
+        <input placeholder="RON..." id="sumIn" value="" class="bg-stone-200 dark:bg-stone-300 w-96 h-96 border-solid border-pink-600 dark:border-teal-400 border-4 rounded-lg p-5 text-8xl placeholder:text-7xl placeholder:text-stone-400 text-stone-500"></input>
         <button>
             <div class="flex flex-col gap-10 text-2xl ">
                 <i class="fa-solid fa-arrow-right fa-2xl"></i>
@@ -24,7 +35,7 @@
                 
             </div>
         </button>
-        <section class="bg-stone-200 w-96 h-96 border-solid border-pink-600 border-4 rounded-lg p-5 text-9xl flex justify-center items-center">
+        <section class="bg-stone-200 dark:bg-stone-300 w-96 h-96 border-solid border-pink-600 dark:border-teal-400 border-4 rounded-lg p-5 text-8xl flex justify-center items-center overflow-auto text-stone-500">
             <div id="result" ></div>
         </section>
     </main>
